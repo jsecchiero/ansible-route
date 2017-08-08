@@ -10,6 +10,6 @@
   with_items: "{{ routes }}"
 
 - name: add current route
-  command: route add -net '{{ item.destination }}' gw route '{{ item.gw }}'
+  command: route add -net '{{ item.destination }}' gw '{{ item.gw }}'
   ignore_errors: yes
   with_items: "{{ routes }}"
