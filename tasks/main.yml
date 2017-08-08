@@ -1,7 +1,7 @@
 ---
 # tasks file for ansible-route
 
-- name: add route to pfsense for partners
+- name: add persistent route
   lineinfile:
     dest: /etc/rc.local
     regexp: '^route add -net {{ item.destination }}'
@@ -9,7 +9,7 @@
     insertbefore: '^exit 0'
   with_items: "{{ routes }}"
 
-- name: add route to pfsense via command
+- name: add current route
   command: route add -net '{{ item.source }}' gw route '{{ item.destination }}'
   ignore_errors: yes
   with_items: "{{ routes }}"
