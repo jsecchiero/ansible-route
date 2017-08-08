@@ -36,10 +36,10 @@ via parameters to the role. Any variables that are read from other roles and/or 
 
 ```
 routes:
-  - source: 10.0.0.0/8
-    gw:     192.168.1.1
-  - source: 172.17.0.0/16
-    gw:     192.168.1.1
+  - destination: 10.0.0.0/8
+    gw:          192.168.1.1
+  - destination: 172.17.0.0/16
+    gw:          192.168.1.1
 ```
 
 ## Dependencies

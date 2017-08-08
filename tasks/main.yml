@@ -4,12 +4,12 @@
 - name: add route to pfsense for partners
   lineinfile:
     dest: /etc/rc.local
-    regexp: '^route add -net {{ item.source }}'
+    regexp: '^route add -net {{ item.destination }}'
     line: 'route add -net 172.31.254.72/29 gw {{ item.gw }}'
     insertbefore: '^exit 0'
   with_items: "{{ routes }}"
 
 - name: add route to pfsense via command
-  command: route add -net '{{ item.source }}' gw route '{{ item.gw }}'
+  command: route add -net '{{ item.source }}' gw route '{{ item.destination }}'
   ignore_errors: yes
   with_items: "{{ routes }}"
