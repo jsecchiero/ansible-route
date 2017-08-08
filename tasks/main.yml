@@ -5,7 +5,7 @@
   lineinfile:
     dest: /etc/rc.local
     regexp: '^route add -net {{ item.destination }}'
-    line: 'route add -net 172.31.254.72/29 gw {{ item.gw }}'
+    line: 'route add -net {{ item.destination }} gw {{ item.gw }}'
     insertbefore: '^exit 0'
   with_items: "{{ routes }}"
 
