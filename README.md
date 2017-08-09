@@ -1,33 +1,6 @@
-# Role Name
+# Route
 
-Adds a route service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Run the following commands
-to install the service:
-
-```
-# Set the working directory to your Ansible Container project root
-$ cd myproject
-
-# Install the service
-$ ansible-container install jsecchiero.route
-```
-
-## Requirements
-
-- [Ansible Container](https://github.com/ansible/ansible-container)
-- An existing Ansible Container project. To create a project, simply run the following:
-    ```
-    # Create an empty project directory
-    $ mkdir myproject
-
-    # Set the working directory to the new directory
-    $ cd myproject
-
-    # Initialize the project
-    $ ansible-contiainer init
-    ```
-
-- Continue listing any prerequisites here...
-
+Compatible with debian
 
 ## Role Variables
 
@@ -41,17 +14,3 @@ routes:
   - destination: 172.17.0.0/16
     gw:          192.168.1.1
 ```
-
-## Dependencies
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
-
-## License
-
-BSD
-
-## Author Information
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
-
-
