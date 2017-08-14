@@ -4,7 +4,7 @@ Compatible with debian
 
 # Role Install
 ```
-ansible-galaxy ansible install --roles-path ./roles jsecchiero.ansible-route
+ansible-galaxy install --roles-path ./roles jsecchiero.ansible-route
 ```
 
 ## Role Variables
