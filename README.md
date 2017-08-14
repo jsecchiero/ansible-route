@@ -13,9 +13,10 @@ A description of the settable variables for this role should go here, including 
 via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
 ```
-jsecchiero.ansible-routes:
-  - destination: 10.0.0.0/8
-    gw:          192.168.1.1
-  - destination: 172.17.0.0/16
-    gw:          192.168.1.1
+role: jsecchiero.ansible-routes:
+routes:
+- destination: 10.0.0.0/8
+  gw:          192.168.1.1
+- destination: 172.17.0.0/16
+  gw:          192.168.1.1
 ```
