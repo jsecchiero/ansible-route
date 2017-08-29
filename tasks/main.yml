@@ -4,12 +4,12 @@
 - name: add persistent route
   lineinfile:
     dest: /etc/rc.local
-    regexp: '^route add -net {{ item.destination }}'
-    line: 'route add -net {{ item.destination }} gw {{ item.gw }}'
+    regexp: '^ip route add {{ item.destination }}'
+    line: 'ip route add {{ item.destination }} via {{ item.gw }}'
     insertbefore: '^exit 0'
   with_items: "{{ routes }}"
 
 - name: add current route
-  command: route add -net '{{ item.destination }}' gw '{{ item.gw }}'
+  command: ip route add '{{ item.destination }}' via '{{ item.gw }}'
   ignore_errors: yes
   with_items: "{{ routes }}"
